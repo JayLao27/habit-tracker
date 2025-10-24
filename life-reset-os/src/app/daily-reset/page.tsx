@@ -16,6 +16,7 @@ import {
   Save,
   Sparkles
 } from "lucide-react"
+import { NotionSyncButton } from "@/components/notion-sync-button"
 
 interface DailyLog {
   morningActivities: string[]
@@ -278,8 +279,17 @@ export default function DailyResetPage() {
         </CardContent>
       </Card>
 
-      {/* Save Button */}
-      <div className="flex justify-end">
+      {/* Save and Sync Buttons */}
+      <div className="flex justify-between">
+        <NotionSyncButton 
+          type="daily-log" 
+          data={dailyLog}
+          onSync={(success) => {
+            if (success) {
+              console.log('Daily log synced to Notion successfully')
+            }
+          }}
+        />
         <Button onClick={saveDailyLog} size="lg">
           <Save className="mr-2 h-4 w-4" />
           Save Daily Log

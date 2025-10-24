@@ -10,6 +10,7 @@ import {
   Bot,
   Sparkles
 } from "lucide-react"
+import { NotionSyncStatus } from "@/components/notion-sync-button"
 
 export default function Dashboard() {
   return (

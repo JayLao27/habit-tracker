@@ -168,6 +168,9 @@ export default function Dashboard() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Notion Integration Status */}
+      <NotionSyncStatus />
     </div>
   )
 }
